@@ -1,10 +1,12 @@
 import React from "react";
-import { Link, Route, useRouteMatch } from "react-router-dom";
-import Breakfast from "./Breakfast";
+import { Link, useRouteMatch } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import Breakfast from "./photos/Breakfast.jpeg";
+import Lunch from "./photos/Lunch.jpeg";
+import Dinner from "./photos/Dinner.jpeg";
 
 export default function Welcome() {
-  const menuList = ["Breakfast", "Lunch", "Dinner"];
-  const { url, path } = useRouteMatch();
+  const { url } = useRouteMatch();
 
   return (
     <div>
@@ -24,19 +26,76 @@ export default function Welcome() {
         If you have created an account and would like to repeat a previous
         order, click the "My Orders" link to log-in to your account.
       </h4>
-      {menuList.map((menu, index) => {
-        return (
-          <ul key={index}>
-            <Link to={`${url}/${menu}`}>
-              <button>{menu}</button>
-            </Link>
-          </ul>
-        );
-      })}
-      <hr />
-      <Route path={`${path}/:menu`}>
-        <Breakfast />
-      </Route>
+
+      <Container>
+        <Row xs={{ order: "first" }}>
+          <Col>
+            <div
+              className={"img-thumbnail hover-overlay"}
+              style={{ maxWidth: "20rem", position: "relative" }}
+            >
+              <Link to={`${url}menu/Breakfast`}>
+                <img
+                  src={Breakfast}
+                  className={"img-fluid"}
+                  alt={"Breakfast Plate"}
+                />
+
+                <div
+                  className={"mask overlay"}
+                  style={{ backgroundColor: "rgba(57, 192, 237, 0.2)" }}
+                >
+                  Breakfast Menu
+                </div>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+
+        <Row xs={{ order: "second" }}>
+          <Col>
+            <div
+              className={"img-thumbnail hover-overlay"}
+              style={{ maxWidth: "20rem", position: "relative" }}
+            >
+              <Link to={`${url}menu/Lunch`}>
+                <img src={Lunch} className={"img-fluid"} alt={"Lunch Plate"} />
+
+                <div
+                  className={"mask overlay"}
+                  style={{ backgroundColor: "rgba(57, 192, 237, 0.2)" }}
+                >
+                  Lunch Menu
+                </div>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+
+        <Row xs={{ order: "third" }}>
+          <Col>
+            <div
+              className={"img-thumbnail hover-overlay"}
+              style={{ maxWidth: "20rem", position: "relative" }}
+            >
+              <Link to={`${url}menu/Dinner`}>
+                <img
+                  src={Dinner}
+                  className={"img-fluid"}
+                  alt={"Dinner Plate"}
+                />
+
+                <div
+                  className={"mask overlay"}
+                  style={{ backgroundColor: "rgba(57, 192, 237, 0.2)" }}
+                >
+                  Dinner Menu
+                </div>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
