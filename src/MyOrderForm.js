@@ -6,6 +6,8 @@ export default function MyOrderForm({ total_price }) {
   const handleNameChange = (event) => setName(event.target.value);
   const [address, setAddress] = useState("");
   const handleAddressChange = (event) => setAddress(event.target.value);
+  const [email, setEmail] = useState("");
+  const handleEmailChange = (event) => setEmail(event.target.value);
   const [phone_number, setPhoneNumber] = useState("");
   const handlePhoneChange = (event) => setPhoneNumber(event.target.value);
   const { order_id } = useContext(AppContext);
@@ -21,8 +23,9 @@ export default function MyOrderForm({ total_price }) {
         status: "active",
         name,
         address,
+        email,
         phone_number,
-        total_price
+        total_price,
       }),
     })
       .then((response) => {
@@ -33,6 +36,7 @@ export default function MyOrderForm({ total_price }) {
       });
     setName("");
     setAddress("");
+    setEmail("");
     setPhoneNumber("");
   };
 
@@ -58,6 +62,17 @@ export default function MyOrderForm({ total_price }) {
           required
           onChange={handleAddressChange}
           value={address}
+        />
+      </label>
+      <label htmlFor="email">
+        Enter Your Email:
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          onChange={handleEmailChange}
+          value={email}
         />
       </label>
       <label htmlFor="phone">
