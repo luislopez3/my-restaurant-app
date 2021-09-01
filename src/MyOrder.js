@@ -19,7 +19,7 @@ export default function MyOrder() {
       .then((data) => {
         setOrders(data);
         loadItems();
-      })
+      });
   }, [order_id]);
 
   console.log(orders);
@@ -34,41 +34,51 @@ export default function MyOrder() {
       });
   }
 
+  /*
+  function confirmOrder() {
+    return (
+      <div>
+        <MyOrderForm total_price={calc.value} />;
+      </div>
+    );
+  }
+  */
+
   function calculateTotal() {
     let total = 0;
     let tax = 0.05;
     for (let i = 0; i < items.length; i++) {
       total += items[i].price;
     }
-    return {value: total + total * tax, tax, total}
+    return { value: total + total * tax, tax, total };
   }
   const calc = calculateTotal();
+
   function bagTotal() {
-    
     return (
       <div>
-        <p>
+        <h5>
           Subtotal:{" "}
           {new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
           }).format(calc.total)}
-        </p>
-        <p>
+        </h5>
+        <h5>
           Tax (5%):{" "}
           {new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
           }).format(calc.total * calc.tax)}
-        </p>
+        </h5>
         <hr />
-        <p>
+        <h4>
           Total incl. tax:{" "}
           {new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
           }).format(calc.value)}
-        </p>
+        </h4>
       </div>
     );
   }
@@ -76,16 +86,11 @@ export default function MyOrder() {
   return (
     <>
       {items.map((item, index) => {
-        return (
-          <OrderItem item={item} index={index} loadItems={loadItems} />
-        );
+        return <OrderItem item={item} index={index} loadItems={loadItems} />;
       })}
-
       <div>{bagTotal()}</div>
-
-      <div>
-        <MyOrderForm total_price={calc.value} />
-      </div>
+      <button onClick={() => confirmOrder()}>Confirm Order</button>
+      <MyOrderForm total_price={calc.value} />
     </>
   );
 }

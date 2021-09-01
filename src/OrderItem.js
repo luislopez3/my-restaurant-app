@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function OrderItem({ index, item, loadItems }) {
+
   function updateItem(quantity, item_id) {
     fetch(`http://localhost:5000/order_items/${item_id}`, {
       method: "PATCH",
@@ -32,7 +33,7 @@ export default function OrderItem({ index, item, loadItems }) {
   return (
     <ul key={index}>
       <p>{item.type} Menu</p>
-      <p>Plate: {item.name}</p>
+      <p>Menu Item: {item.name}</p>
       <img src={item.image_url} alt={item.name}></img>
       <p>
         Quantity:{" "}
