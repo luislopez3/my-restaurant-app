@@ -1,15 +1,15 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import App from "./App";
+import OrderItem from "./OrderItem";
 import { render } from "@testing-library/react";
 
-describe("App component", () => {
-  test("renders App w/o an error", () => {
-    render(<App />);
+describe("OrderItem component", () => {
+  test("renders OrderItem w/o an error", () => {
+    render(<OrderItem />);
   });
 
   test("Matches the snapshot", () => {
-    const wrapper = create(<App />);
+    const wrapper = create(<OrderItem />);
     expect(wrapper.toJSON()).toMatchSnapshot();
   });
 });

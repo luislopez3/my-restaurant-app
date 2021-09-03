@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyOrder component Matches the snapshot 1`] = `
+Array [
+  <div>
+    <div>
+      <h5>
+        Subtotal:
+         
+        $0.00
+      </h5>
+      <h5>
+        Tax (5%):
+         
+        $0.00
+      </h5>
+      <hr />
+      <h4>
+        Total incl. tax:
+         
+        $0.00
+      </h4>
+    </div>
+  </div>,
+  <button
+    onClick={[Function]}
+  >
+    Confirm Order
+  </button>,
+]
+`;

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OrderItem({ index, item, loadItems }) {
+export default function OrderItem({ index, item = {}, loadItems }) {
 
   function updateItem(quantity, item_id) {
     fetch(`http://localhost:5000/order_items/${item_id}`, {

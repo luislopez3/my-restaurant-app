@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useCallback } from "react";
 import AppContext from "./AppContext";
 import MyOrderForm from "./MyOrderForm";
 import OrderItem from "./OrderItem";
@@ -6,7 +6,21 @@ import OrderItem from "./OrderItem";
 export default function MyOrder() {
   const [orders, setOrders] = useState({});
   const [items, setItems] = useState([]);
+  const [showForm, setShowForm] = useState(false);
   const { order_id } = useContext(AppContext);
+
+  const loadItems = useCallback(
+    function () {
+      return fetch(`http://localhost:5000/order_items/${order_id}`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setItems(data);
+        });
+    },
+    [setItems, order_id]
+  );
 
   useEffect(() => {
     if (!order_id) {
@@ -20,35 +34,21 @@ export default function MyOrder() {
         setOrders(data);
         loadItems();
       });
-  }, [order_id]);
+  }, [order_id, loadItems]);
 
-  console.log(orders);
-
-  function loadItems() {
-    return fetch(`http://localhost:5000/order_items/${order_id}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setItems(data);
-      });
-  }
-
-  /*
   function confirmOrder() {
     return (
       <div>
-        <MyOrderForm total_price={calc.value} />;
+        <MyOrderForm total_price={calc.value} />
       </div>
     );
   }
-  */
 
   function calculateTotal() {
     let total = 0;
     let tax = 0.05;
     for (let i = 0; i < items.length; i++) {
-      total += items[i].price;
+      total += items[i].price * items[i].quantity;
     }
     return { value: total + total * tax, tax, total };
   }
@@ -89,8 +89,8 @@ export default function MyOrder() {
         return <OrderItem item={item} index={index} loadItems={loadItems} />;
       })}
       <div>{bagTotal()}</div>
-      <button onClick={() => confirmOrder()}>Confirm Order</button>
-      <MyOrderForm total_price={calc.value} />
+      <button onClick={() => setShowForm(true)}>Confirm Order</button>
+      {showForm && confirmOrder()}
     </>
   );
 }

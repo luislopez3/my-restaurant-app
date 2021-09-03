@@ -18,8 +18,6 @@ export default function Menu() {
       });
   }, [type]);
 
-  console.log(menus, bag);
-
   function addToBag(menu) {
     fetch("http://localhost:5000/order_items", {
       method: "POST",

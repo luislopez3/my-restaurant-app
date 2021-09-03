@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderItem component Matches the snapshot 1`] = `
+<ul>
+  <p>
+     Menu
+  </p>
+  <p>
+    Menu Item: 
+  </p>
+  <img />
+  <p>
+    Quantity:
+     
+    <input
+      onChange={[Function]}
+      type="number"
+    />
+  </p>
+  <p>
+    <button
+      onClick={[Function]}
+    >
+      Remove Item
+    </button>
+  </p>
+  <p>
+    Price: $
+  </p>
+</ul>
+`;

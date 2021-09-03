@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import AppContext from "./AppContext";
 
 export default function MyOrderForm({ total_price }) {
@@ -11,6 +12,9 @@ export default function MyOrderForm({ total_price }) {
   const [phone_number, setPhoneNumber] = useState("");
   const handlePhoneChange = (event) => setPhoneNumber(event.target.value);
   const { order_id } = useContext(AppContext);
+  let history = useHistory();
+  
+   
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,7 +36,7 @@ export default function MyOrderForm({ total_price }) {
         return response.json();
       })
       .then((data) => {
-        return "Your order has been received!";
+        history.push("/welcome");
       });
     setName("");
     setAddress("");
