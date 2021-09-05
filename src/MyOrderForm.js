@@ -13,8 +13,6 @@ export default function MyOrderForm({ total_price }) {
   const handlePhoneChange = (event) => setPhoneNumber(event.target.value);
   const { order_id } = useContext(AppContext);
   let history = useHistory();
-  
-   
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,7 +34,7 @@ export default function MyOrderForm({ total_price }) {
         return response.json();
       })
       .then((data) => {
-        history.push("/welcome");
+        history.push("/order_received");
       });
     setName("");
     setAddress("");
