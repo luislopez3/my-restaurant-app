@@ -15,7 +15,6 @@ export default function MyOrder() {
           return response.json();
         })
         .then((data) => {
-          console.log(data)
           setItems(data);
           setOrder({items: data})
         });
