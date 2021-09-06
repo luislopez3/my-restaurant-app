@@ -11,7 +11,9 @@ import OrderReceived from "./OrderReceived";
 
 export default function App() {
   const [order_id, setOrderId] = useState(localStorage.order_id || null);
-  const value = { order_id, setOrderId };
+  const [order, setOrder] = useState({items: []});
+  const value = { order_id, setOrderId, order, setOrder };
+  
 
   return (
     <AppContext.Provider value={value}>

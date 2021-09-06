@@ -4,10 +4,9 @@ import MyOrderForm from "./MyOrderForm";
 import OrderItem from "./OrderItem";
 
 export default function MyOrder() {
-  const [orders, setOrders] = useState({});
   const [items, setItems] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const { order_id } = useContext(AppContext);
+  const { order_id, setOrder } = useContext(AppContext);
 
   const loadItems = useCallback(
     function () {
@@ -16,10 +15,12 @@ export default function MyOrder() {
           return response.json();
         })
         .then((data) => {
+          console.log(data)
           setItems(data);
+          setOrder({items: data})
         });
     },
-    [setItems, order_id]
+    [setOrder, setItems, order_id]
   );
 
   useEffect(() => {
@@ -31,7 +32,6 @@ export default function MyOrder() {
         return response.json();
       })
       .then((data) => {
-        setOrders(data);
         loadItems();
       });
   }, [order_id, loadItems]);

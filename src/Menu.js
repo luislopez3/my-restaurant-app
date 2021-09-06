@@ -4,7 +4,6 @@ import AppContext from "./AppContext";
 
 export default function Menu() {
   const [menus, setMenus] = useState([]);
-  const [bag, setBag] = useState([]);
   const { type } = useParams();
   const { order_id, setOrderId } = useContext(AppContext);
 
@@ -30,7 +29,6 @@ export default function Menu() {
         return response.json();
       })
       .then((data) => {
-        setBag(data);
         if (!order_id) {
           setOrderId(data.order_id);
           localStorage.order_id = data.order_id;

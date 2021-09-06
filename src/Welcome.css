@@ -1,0 +1,12 @@
+.welcome {
+    background-color: #f8f0e2;
+    color: #f76262;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }
+
+  img {
+    height: auto;
+    width: auto;
+  }

@@ -11,8 +11,16 @@ export default function MyOrderForm({ total_price }) {
   const handleEmailChange = (event) => setEmail(event.target.value);
   const [phone_number, setPhoneNumber] = useState("");
   const handlePhoneChange = (event) => setPhoneNumber(event.target.value);
-  const { order_id } = useContext(AppContext);
+  const { order_id, setOrder, setOrderId } = useContext(AppContext);
   let history = useHistory();
+  const order = {
+    status: "active",
+    name,
+    address,
+    email,
+    phone_number,
+    total_price,
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,19 +29,15 @@ export default function MyOrderForm({ total_price }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        status: "active",
-        name,
-        address,
-        email,
-        phone_number,
-        total_price,
-      }),
+      body: JSON.stringify(order),
     })
       .then((response) => {
         return response.json();
       })
       .then((data) => {
+        setOrder(stateOrder => ({ ...stateOrder, ...order }));
+        setOrderId(null);
+        localStorage.clear();
         history.push("/order_received");
       });
     setName("");

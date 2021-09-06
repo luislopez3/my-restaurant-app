@@ -1,3 +1,4 @@
+import "./Welcome.css";
 import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
@@ -9,7 +10,7 @@ export default function Welcome() {
   const { url } = useRouteMatch();
 
   return (
-    <div>
+    <div className="welcome">
       <h1>Capital City Cafe</h1>
       <h2>Welcome to your next favorite restaurant!</h2>
       <h3>We offer many classic and unique dishes that are sure to please.</h3>
@@ -28,69 +29,55 @@ export default function Welcome() {
       </h4>
 
       <Container>
-        <Row xs={{ order: "first" }}>
+        <Row>
           <Col>
             <div
               className={"img-thumbnail hover-overlay"}
               style={{ maxWidth: "20rem", position: "relative" }}
             >
               <Link to={`${url}menu/Breakfast`}>
+                Breakfast Menu
                 <img
                   src={Breakfast}
                   className={"img-fluid"}
                   alt={"Breakfast Plate"}
                 />
-
                 <div
                   className={"mask overlay"}
                   style={{ backgroundColor: "rgba(57, 192, 237, 0.2)" }}
-                >
-                  Breakfast Menu
-                </div>
+                ></div>
               </Link>
             </div>
           </Col>
-        </Row>
 
-        <Row xs={{ order: "second" }}>
           <Col>
             <div
               className={"img-thumbnail hover-overlay"}
               style={{ maxWidth: "20rem", position: "relative" }}
             >
               <Link to={`${url}menu/Lunch`}>
+                Lunch Menu
                 <img src={Lunch} className={"img-fluid"} alt={"Lunch Plate"} />
-
                 <div
                   className={"mask overlay"}
                   style={{ backgroundColor: "rgba(57, 192, 237, 0.2)" }}
-                >
-                  Lunch Menu
-                </div>
+                ></div>
               </Link>
             </div>
           </Col>
-        </Row>
 
-        <Row xs={{ order: "third" }}>
           <Col>
             <div
               className={"img-thumbnail hover-overlay"}
               style={{ maxWidth: "20rem", position: "relative" }}
             >
               <Link to={`${url}menu/Dinner`}>
+                Dinner Menu
                 <img
                   src={Dinner}
                   className={"img-fluid"}
                   alt={"Dinner Plate"}
                 />
-
-                <div
-                  className={"mask overlay"}
-                  style={{ backgroundColor: "rgba(57, 192, 237, 0.2)" }}
-                >
-                  Dinner Menu
-                </div>
               </Link>
             </div>
           </Col>
