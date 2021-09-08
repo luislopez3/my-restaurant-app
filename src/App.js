@@ -11,18 +11,19 @@ import OrderReceived from "./OrderReceived";
 
 export default function App() {
   const [order_id, setOrderId] = useState(localStorage.order_id || null);
-  const [order, setOrder] = useState({items: []});
+  const [order, setOrder] = useState({ items: [] });
   const value = { order_id, setOrderId, order, setOrder };
-  
 
   return (
     <AppContext.Provider value={value}>
       <Router>
-        <div style={{ width: 1000, margin: "0 auto", padding: 20 }}>
-          <Link to="/">Welcome</Link> | <Link to="/menus">Full Menu</Link> |
-          <Link to="/my-order">My Order</Link> |{" "}
+        <div className="nav">
+          <Link to="/">Welcome</Link> 
+          <Link to="/menus">Full Menu</Link>
+          <Link to="/my-order">My Order</Link>
           <Link to="/location">Location/Contact</Link>
-          <hr />
+        </div>
+        <div>
           <Route exact path="/">
             <Welcome />
           </Route>
