@@ -38,12 +38,13 @@ export default function Menu() {
 
   return (
     <>
+    <div className="full-menu">
       {menus.map((menu, index) => {
         return (
           <ul key={index}>
             <p>{menu.name}</p>
             <p>{menu.description}</p>
-            <img src={menu.image_url} alt={menu.name} />
+            <img className="menu-img" src={menu.image_url} alt={menu.name} />
             <p>
               Price:{" "}
               {new Intl.NumberFormat("en-US", {
@@ -55,6 +56,7 @@ export default function Menu() {
           </ul>
         );
       })}
+      </div>
     </>
   );
 }

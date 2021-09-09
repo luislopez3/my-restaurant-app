@@ -12,10 +12,8 @@ export default function Welcome() {
   return (
     <>
       <div className="welcome">
-        <Link to="/">
-          <h1>CAPITAL CITY CAFE</h1>
-          <img src={Inside} className="first-img" alt="Inside Restaurant" />
-        </Link>
+        <h1 className="first-header">CAPITAL CITY CAFE</h1>
+        <img src={Inside} className="first-img" alt="Inside Restaurant" />
         <h2>Welcome to your next favorite restaurant!</h2>
         <h3>
           We offer many classic and unique dishes that are sure to please.
@@ -34,20 +32,24 @@ export default function Welcome() {
         <div className="column">
           <Link to={`${url}menu/Breakfast`}>
             <h5>Breakfast Menu</h5>
-            <img src={Breakfast} alt={"Breakfast Plate"} />
+            <img
+              className="welcome-img"
+              src={Breakfast}
+              alt={"Breakfast Plate"}
+            />
           </Link>
         </div>
         <div className="column">
           <Link to={`${url}menu/Lunch`}>
             <h5>Lunch Menu</h5>
-            <img src={Lunch} alt={"Lunch Plate"} />
+            <img className="welcome-img" src={Lunch} alt={"Lunch Plate"} />
           </Link>
         </div>
 
         <div className="column">
           <Link to={`${url}menu/Dinner`}>
             <h5>Dinner Menu</h5>
-            <img src={Dinner} alt={"Dinner Plate"} />
+            <img className="welcome-img" src={Dinner} alt={"Dinner Plate"} />
           </Link>
         </div>
       </div>

@@ -13,21 +13,19 @@
   border-color: #f8f0e2;
 }
 
-h1 {
+.first-header {
   color: #56593d;
-  margin: auto;
+  padding: 10px;
+  margin: 0px;
   font-size: 40px;
+  font-weight: 500;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 h2,
-h3 {
-  font-family: "sans-serif", "serif";
-}
-
+h3,
 h4 {
   font-family: "sans-serif", "serif";
-  padding-bottom: 20px;
 }
 
 h5 {
@@ -42,20 +40,29 @@ h5 {
 p {
   font-family: "sans-serif", "serif";
   font-weight: bold;
+  margin: 0px;
+  padding: 10px;
 }
 
-img {
+.welcome-img {
   max-width: 23rem;
   border: 4px solid;
   border-color: #ffffef;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.welcome-img:hover {
+  opacity: 0.3;
 }
 
 .column {
-  margin-top: -40px;
+  margin-top: -20px;
   float: left;
   width: 33.33%;
 }
 
-.row {
-  padding: 0%;
-}

@@ -1,4 +1,6 @@
+import "./FullMenu.css";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function FullMenu() {
   const [menus, setMenus] = useState([]);
@@ -15,24 +17,31 @@ export default function FullMenu() {
 
   return (
     <>
-      <div>
-        <h1>
-          To create an order, return to the Welcome page to select the
-          appropriate menu for the current time.
+      <div className="full-menu">
+        <h1 className="home-link">
+          To create an order, return to the
+          <Link className="home-link" to="/">
+            Welcome
+          </Link>
+          page to select the appropriate menu for the current time.
         </h1>
-        <li>
+        <>
           {menus.map((menu, index) => {
             return (
               <div key={index}>
-                <h2>{menu.type} Menu</h2>
-                <h3>Plate: {menu.name}</h3>
+                <h2>{menu.type}</h2>
+                <h3>{menu.name}</h3>
                 <h4>Description: {menu.description}</h4>
-                <img src={menu.image_url} alt={menu.name} />
+                <img
+                  className="menu-img"
+                  src={menu.image_url}
+                  alt={menu.name}
+                />
                 <h4>Price: ${menu.price}</h4>
               </div>
             );
           })}
-        </li>
+        </>
       </div>
     </>
   );

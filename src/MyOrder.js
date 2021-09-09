@@ -87,7 +87,7 @@ export default function MyOrder() {
       {items.map((item, index) => {
         return <OrderItem item={item} index={index} loadItems={loadItems} />;
       })}
-      <div>{bagTotal()}</div>
+      <div className="bag">{bagTotal()}</div>
       <button onClick={() => setShowForm(true)}>Confirm Order</button>
       {showForm && confirmOrder()}
     </>
