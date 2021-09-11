@@ -14,18 +14,14 @@ export default function Welcome() {
       <div className="welcome">
         <h1 className="first-header">CAPITAL CITY CAFE</h1>
         <img src={Inside} className="first-img" alt="Inside Restaurant" />
-        <h2>Welcome to your next favorite restaurant!</h2>
-        <h3>
-          We offer many classic and unique dishes that are sure to please.
-        </h3>
-        <p>
-          We are open daily from 7:00 - 3:00, for Breakfast and Lunch, and 5:00
-          - 9:00 for Dinner.
-        </p>
-        <p>Breakfast is served from 7:00 - 11:00</p>
-        <p>Lunch is served from 11:00 - 3:00</p>
-        <p>Dinner is served from 5:00 - 9:00</p>
-        <h4>To start an order, click the appropriate "menu" link below.</h4>
+        <div className="first-img-text">
+          <h2>Welcome to your next favorite restaurant!</h2>
+          <h3>We are open daily from 7:00 - 9:00.</h3>
+          <h4>Breakfast is served from 7:00 - 11:00</h4>
+          <h4>Lunch is served from 11:00 - 3:00</h4>
+          <h4>Dinner is served from 5:00 - 9:00</h4>
+          <h4>To start an order, click the appropriate menu link below.</h4>
+        </div>
       </div>
 
       <div className="row">
