@@ -15,19 +15,17 @@ export default function OrderReceived() {
   }
 
   function orderReceipt() {
-    return order.items.map((item, index) => {
-      return (
-        <ul key={index}>
-          <li>Your order number is: {item.order_id}</li>
-          <li>The name on your order is: {order.name} </li>
-          <li>The email associated with your order is: {order.email}</li>
-          <li>
-            Your order includes the following items: <ol>{plateNames()}</ol>
-          </li>
-          <li>The total amount due at pick-up is: ${order.total_price}</li>
-        </ul>
-      );
-    });
+    return (
+      <ul>
+        <li>Your order number is: {order.order_id}</li>
+        <li>The name on your order is: {order.name} </li>
+        <li>The email associated with your order is: {order.email}</li>
+        <li>
+          Your order includes the following items: <ol>{plateNames()}</ol>
+        </li>
+        <li>The total amount due at pick-up is: ${order.total_price}</li>
+      </ul>
+    );
   }
 
   return (

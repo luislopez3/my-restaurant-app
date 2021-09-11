@@ -20,7 +20,7 @@ export default function MyOrderForm({ total_price }) {
     email,
     phone_number,
     total_price,
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,7 +35,11 @@ export default function MyOrderForm({ total_price }) {
         return response.json();
       })
       .then((data) => {
-        setOrder(stateOrder => ({ ...stateOrder, ...order }));
+        setOrder((stateOrder) => ({
+          ...stateOrder,
+          ...order,
+          order_id: order_id,
+        }));
         setOrderId(null);
         localStorage.clear();
         history.push("/order_received");
