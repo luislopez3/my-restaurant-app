@@ -1,3 +1,4 @@
+import "./MyOrder.css";
 import React from "react";
 
 export default function OrderItem({ index, item = {}, loadItems }) {
@@ -29,14 +30,15 @@ export default function OrderItem({ index, item = {}, loadItems }) {
   }
 
   return (
-    <div className="my-order">
-      <ul key={index}>
+    <div className="my-order-row">
+      <div className="my-order-column" key={index}>
         <h2>{item.type} Menu</h2>
         <h3>Item: {item.name}</h3>
-        <img className="menu-img" src={item.image_url} alt={item.name}></img>
+        <img className="menu-img" src={item.image_url} alt={item.name} />
         <p>
           Quantity:{" "}
           <input
+            className="my-order-quantity"
             onChange={(e) => updateItem(e.target.value, item.id)}
             type="number"
             value={item.quantity}
@@ -44,10 +46,12 @@ export default function OrderItem({ index, item = {}, loadItems }) {
         </p>
 
         <p>
-          <button onClick={() => removeItem(item)}>Remove Item</button>
+          <button className="my-order-button" onClick={() => removeItem(item)}>
+            Remove Item
+          </button>
         </p>
         <p>Price: ${item.price}</p>
-      </ul>
+      </div>
     </div>
   );
 }

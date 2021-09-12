@@ -1,3 +1,4 @@
+import "./MyOrder.css";
 import React, { useEffect, useState, useContext, useCallback } from "react";
 import AppContext from "./AppContext";
 import MyOrderForm from "./MyOrderForm";
@@ -16,7 +17,7 @@ export default function MyOrder() {
         })
         .then((data) => {
           setItems(data);
-          setOrder({items: data})
+          setOrder({ items: data });
         });
     },
     [setOrder, setItems, order_id]
@@ -55,29 +56,32 @@ export default function MyOrder() {
 
   function bagTotal() {
     return (
-      <div>
-        <h5>
-          Subtotal:{" "}
-          {new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-          }).format(calc.total)}
-        </h5>
-        <h5>
-          Tax (5%):{" "}
-          {new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-          }).format(calc.total * calc.tax)}
-        </h5>
-        <hr />
-        <h4>
-          Total incl. tax:{" "}
-          {new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-          }).format(calc.value)}
-        </h4>
+      <div className="bag-total-row">
+        <div className="bag-total-column">
+          <h2>Bag Total:</h2>
+          <h3>
+            Subtotal:{" "}
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(calc.total)}
+          </h3>
+          <h3>
+            Tax (5%):{" "}
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(calc.total * calc.tax)}
+          </h3>
+          <hr />
+          <h2>
+            Total incl. tax:{" "}
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(calc.value)}
+          </h2>
+        </div>
       </div>
     );
   }
@@ -88,7 +92,12 @@ export default function MyOrder() {
         return <OrderItem item={item} index={index} loadItems={loadItems} />;
       })}
       <div className="bag">{bagTotal()}</div>
-      <button onClick={() => setShowForm(true)}>Confirm Order</button>
+      <button
+        className="confirm-order-button"
+        onClick={() => setShowForm(true)}
+      >
+        Confirm Order
+      </button>
       {showForm && confirmOrder()}
     </>
   );

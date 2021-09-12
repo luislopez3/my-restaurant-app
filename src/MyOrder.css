@@ -1,8 +1,57 @@
-
-button {
-  background-color: #f8f0e2;
+.my-order-row {
+  background-color: #ffffef;
   color: #56593d;
-  margin: auto 50px;
+  display: inline-table;
+  float: left;
+  padding: 15px;
+  width: 30%;
+  line-height: 15px;
+  margin: 10px;
+}
+
+.my-order-column {
+  background-color: #ffffef;
+  width: 100%;
+  text-align: left;
+}
+
+.my-order-quantity {
+  color: #f8f0e2;
+  background-color: #56593d;
+  width: 33px;
+  text-align: center;
+}
+
+.my-order-button {
+  background-color: #56593d;
+  color: #f8f0e2;
   padding: 5px;
-  margin-bottom: 30px;
+}
+
+.confirm-order-button {
+  background-color: #56593d;
+  color: #f8f0e2;
+  position: fixed;
+  top: 40%;
+  right: 10%;
+  width: 10rem;
+  padding: 10px;
+}
+
+.bag-total-row {
+  background-color: #ffffef;
+  color: #56593d;
+  border: 3px solid #56593d;
+  position: fixed;
+  top: 10%;
+  right: 1%;
+  width: 21rem;
+  line-height: 15px;
+  padding: 5px;
+}
+
+.bag-total-column {
+  background-color: #ffffef;
+  width: 100%;
+  text-align: justify;
 }
