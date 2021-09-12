@@ -16,19 +16,19 @@ export default function FullMenu() {
   }, []);
 
   return (
-    <>
-      <div className="full-menu">
-        <h1 className="home-link">
-          To create an order, return to the
-          <Link className="home-link" to="/">
-            Welcome
-          </Link>
-          page to select the appropriate menu for the current time.
-        </h1>
-        <>
-          {menus.map((menu, index) => {
-            return (
-              <div key={index}>
+    <div className="full-menu">
+      <h1 className="home-link">
+        To create an order, return to the
+        <Link className="home-link" to="/">
+          Welcome
+        </Link>
+        page to select the appropriate menu for the current time.
+      </h1>
+      <>
+        {menus.map((menu, index) => {
+          return (
+            <div className="full-menu-row">
+              <div className="full-menu-column" key={index}>
                 <h2>{menu.type}</h2>
                 <h3>{menu.name}</h3>
                 <h4>Description: {menu.description}</h4>
@@ -39,10 +39,10 @@ export default function FullMenu() {
                 />
                 <h4>Price: ${menu.price}</h4>
               </div>
-            );
-          })}
-        </>
-      </div>
-    </>
+            </div>
+          );
+        })}
+      </>
+    </div>
   );
 }

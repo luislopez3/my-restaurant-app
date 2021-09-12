@@ -24,30 +24,28 @@ export default function Welcome() {
         </div>
       </div>
 
-      <div className="row">
-        <div className="column">
-          <Link to={`${url}menu/Breakfast`}>
-            <h5>Breakfast Menu</h5>
-            <img
-              className="welcome-img"
-              src={Breakfast}
-              alt={"Breakfast Plate"}
-            />
-          </Link>
-        </div>
-        <div className="column">
-          <Link to={`${url}menu/Lunch`}>
-            <h5>Lunch Menu</h5>
-            <img className="welcome-img" src={Lunch} alt={"Lunch Plate"} />
-          </Link>
-        </div>
+      <div className="welcome-column">
+        <Link to={`${url}menu/Breakfast`}>
+          <h5>Breakfast Menu</h5>
+          <img
+            className="welcome-img"
+            src={Breakfast}
+            alt={"Breakfast Plate"}
+          />
+        </Link>
+      </div>
+      <div className="welcome-column">
+        <Link to={`${url}menu/Lunch`}>
+          <h5>Lunch Menu</h5>
+          <img className="welcome-img" src={Lunch} alt={"Lunch Plate"} />
+        </Link>
+      </div>
 
-        <div className="column">
-          <Link to={`${url}menu/Dinner`}>
-            <h5>Dinner Menu</h5>
-            <img className="welcome-img" src={Dinner} alt={"Dinner Plate"} />
-          </Link>
-        </div>
+      <div className="welcome-column">
+        <Link to={`${url}menu/Dinner`}>
+          <h5>Dinner Menu</h5>
+          <img className="welcome-img" src={Dinner} alt={"Dinner Plate"} />
+        </Link>
       </div>
     </>
   );
