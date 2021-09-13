@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import AppContext from "./AppContext";
+import config from "./config";
 
 export default function Menu() {
   const [menus, setMenus] = useState([]);
@@ -8,7 +9,7 @@ export default function Menu() {
   const { order_id, setOrderId } = useContext(AppContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/menu_items?type=${type}`)
+    fetch(`${config.API_URL}/menu_items?type=${type}`)
       .then((response) => {
         return response.json();
       })
@@ -18,7 +19,7 @@ export default function Menu() {
   }, [type]);
 
   function addToBag(menu) {
-    fetch("http://localhost:5000/order_items", {
+    fetch(`${config.API_URL}/order_items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

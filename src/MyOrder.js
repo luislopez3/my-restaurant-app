@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext, useCallback } from "react";
 import AppContext from "./AppContext";
 import MyOrderForm from "./MyOrderForm";
 import OrderItem from "./OrderItem";
+import config from "./config";
 
 export default function MyOrder() {
   const [items, setItems] = useState([]);
@@ -11,7 +12,7 @@ export default function MyOrder() {
 
   const loadItems = useCallback(
     function () {
-      return fetch(`http://localhost:5000/order_items/${order_id}`)
+      return fetch(`${config.API_URL}/order_items/${order_id}`)
         .then((response) => {
           return response.json();
         })
@@ -27,7 +28,7 @@ export default function MyOrder() {
     if (!order_id) {
       return;
     }
-    fetch(`http://localhost:5000/orders/${order_id}`)
+    fetch(`${config.API_URL}/orders/${order_id}`)
       .then((response) => {
         return response.json();
       })

@@ -1,9 +1,10 @@
 import "./MyOrder.css";
 import React from "react";
+import config from "./config";
 
 export default function OrderItem({ index, item = {}, loadItems }) {
   function updateItem(quantity, item_id) {
-    fetch(`http://localhost:5000/order_items/${item_id}`, {
+    fetch(`${config.API_URL}/order_items/${item_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +20,7 @@ export default function OrderItem({ index, item = {}, loadItems }) {
   }
 
   function removeItem(item) {
-    fetch(`http://localhost:5000/order_items/${item.id}`, {
+    fetch(`${config.API_URL}/order_items/${item.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

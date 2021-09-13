@@ -1,12 +1,13 @@
 import "./FullMenu.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import config from "./config";
 
 export default function FullMenu() {
   const [menus, setMenus] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/menu_items/menus")
+    fetch(`${config.API_URL}/menu_items/menus`)
       .then((response) => {
         return response.json();
       })

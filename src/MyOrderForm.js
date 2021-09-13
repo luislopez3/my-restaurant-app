@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AppContext from "./AppContext";
+import config from "./config";
 
 export default function MyOrderForm({ total_price }) {
   const [name, setName] = useState("");
@@ -24,7 +25,7 @@ export default function MyOrderForm({ total_price }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:5000/orders/${order_id}`, {
+    fetch(`${config.API_URL}/orders/${order_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
