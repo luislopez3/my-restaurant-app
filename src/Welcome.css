@@ -7,7 +7,7 @@
 }
 
 .first-img {
-  width: fit-content;
+  width: max-content;
   padding: 15px;
   border: 10px solid #f8f0e2;
 }
