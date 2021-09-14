@@ -1,0 +1,35 @@
+.receipt-total-row {
+  background-color: #ffffef;
+  color: #56593d;
+  border: 3px solid #56593d;
+  border-style: dotted;
+  position: fixed;
+  top: 15%;
+  left: 5%;
+  width: 33rem;
+  line-height: 25px;
+  padding: 10px;
+}
+
+.receipt-total-column {
+  background-color: #ffffef;
+  width: 100%;
+  text-align: justify;
+}
+
+@media all and (max-width: 768px) {
+  .receipt-total-row {
+    font-size: 10px;
+    position: fixed;
+    top: 25%;
+    width: 17rem;
+    line-height: 10px;
+    padding: 5px;
+  }
+
+  .receipt-total-column {
+    background-color: #ffffef;
+    width: 95%;
+    text-align: justify;
+  }
+}

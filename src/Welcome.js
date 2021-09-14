@@ -47,6 +47,10 @@ export default function Welcome() {
           <img className="welcome-img" src={Dinner} alt={"Dinner Plate"} />
         </Link>
       </div>
+      <div className="welcome-footer">
+        <h4>1000 Main Street Santa Fe, New Mexico 87501</h4>
+        <h4>(505) 555-1234</h4>
+      </div>
     </>
   );
 }

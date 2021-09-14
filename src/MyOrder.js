@@ -39,7 +39,7 @@ export default function MyOrder() {
 
   function confirmOrder() {
     return (
-      <div>
+      <div className="my-order-form">
         <MyOrderForm total_price={calc.value} />
       </div>
     );
@@ -59,7 +59,7 @@ export default function MyOrder() {
     return (
       <div className="bag-total-row">
         <div className="bag-total-column">
-          <h2>Bag Total:</h2>
+          <h2>Order Total:</h2>
           <h3>
             Subtotal:{" "}
             {new Intl.NumberFormat("en-US", {
@@ -82,6 +82,13 @@ export default function MyOrder() {
               currency: "USD",
             }).format(calc.value)}
           </h2>
+          <button
+            className="confirm-order-button"
+            onClick={() => setShowForm(true)}
+          >
+            Confirm Order
+          </button>
+          {showForm && confirmOrder()}
         </div>
       </div>
     );
@@ -93,13 +100,6 @@ export default function MyOrder() {
         return <OrderItem item={item} index={index} loadItems={loadItems} />;
       })}
       <div className="bag">{bagTotal()}</div>
-      <button
-        className="confirm-order-button"
-        onClick={() => setShowForm(true)}
-      >
-        Confirm Order
-      </button>
-      {showForm && confirmOrder()}
     </>
   );
 }

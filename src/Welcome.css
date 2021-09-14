@@ -61,6 +61,14 @@ h5 {
   width: 33.33%;
 }
 
+.welcome-footer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  margin: 10px;
+  text-align: center;
+  color: #56593d;
+}
+
 /* -------  Media Query ------- */
 
 @media all and (max-width: 768px) {
@@ -97,5 +105,10 @@ h5 {
   .welcome-column {
     margin-top: 3px;
     width: 95%;
+  }
+
+  .welcome-footer {
+    font-size: 10px;
+    margin: 0px;
   }
 }

@@ -1,19 +1,9 @@
-.full-menu {
+.menu-by-type {
   background-color: #ffffef !important;
+  font-size: 13px;
   color: #56593d;
   text-align: left;
   padding-left: 20px;
-}
-
-.home-link {
-  background-color: #ffffef;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 0px;
-  padding-top: 20px;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 .menu-img {
@@ -25,31 +15,28 @@
   background-color: #ffffef;
   display: inline-block;
   width: 23rem;
-  line-height: 15px;
+  line-height: 20px;
 }
 
 .full-menu-column {
   background-color: #ffffef;
-  width: 99%;
+  width: 92%;
   text-align: left;
   padding-left: 15px;
   margin-top: 25px;
 }
 
+.add-to-order-button {
+  background-color: #56593d;
+  color: #f8f0e2;
+  font-weight: bold;
+  width: 8rem;
+  padding: 8px;
+}
+
 /* -------  Media Query ------- */
 
 @media all and (max-width: 768px) {
-  .home-link {
-    display: initial;
-    width: 95%;
-    font-size: 15px;
-    font-weight: 500;
-    margin: 1.5px;
-    padding-top: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
   .menu-img {
     width: 16rem;
     height: 16rem;
@@ -62,7 +49,13 @@
   }
 
   .full-menu-column {
-    width: 95%;
+    width: 72%;
+    margin-top: 10px;
+  }
+
+  .add-to-order-button {
+    width: 5rem;
+    padding: 5px;
     margin-top: 10px;
   }
 }

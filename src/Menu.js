@@ -1,3 +1,4 @@
+import "./Menu.css";
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import AppContext from "./AppContext";
@@ -39,24 +40,35 @@ export default function Menu() {
 
   return (
     <>
-    <div className="full-menu">
-      {menus.map((menu, index) => {
-        return (
-          <ul key={index}>
-            <p>{menu.name}</p>
-            <p>{menu.description}</p>
-            <img className="menu-img" src={menu.image_url} alt={menu.name} />
-            <p>
-              Price:{" "}
-              {new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "USD",
-              }).format(menu.price)}
-            </p>
-            <button onClick={() => addToBag(menu)}>Add to Bag</button>
-          </ul>
-        );
-      })}
+      <div className="menu-by-type">
+        {menus.map((menu, index) => {
+          return (
+            <div className="full-menu-row">
+              <div className="full-menu-column" key={index}>
+                <h2>Item: {menu.name}</h2>
+                <h3>Description: {menu.description}</h3>
+                <img
+                  className="menu-img"
+                  src={menu.image_url}
+                  alt={menu.name}
+                />
+                <h4>
+                  Price:{" "}
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(menu.price)}
+                </h4>
+                <button
+                  className="add-to-order-button"
+                  onClick={() => addToBag(menu)}
+                >
+                  Add to Order
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );

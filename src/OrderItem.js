@@ -36,6 +36,7 @@ export default function OrderItem({ index, item = {}, loadItems }) {
         <h2>{item.type} Menu</h2>
         <h3>Item: {item.name}</h3>
         <img className="menu-img" src={item.image_url} alt={item.name} />
+        <p>Price: ${item.price}</p>
         <p>
           Quantity:{" "}
           <input
@@ -45,13 +46,15 @@ export default function OrderItem({ index, item = {}, loadItems }) {
             value={item.quantity}
           />
         </p>
-
+        
         <p>
-          <button className="my-order-button" onClick={() => removeItem(item)}>
+          <button
+            className="remove-item-button"
+            onClick={() => removeItem(item)}
+          >
             Remove Item
           </button>
         </p>
-        <p>Price: ${item.price}</p>
       </div>
     </div>
   );

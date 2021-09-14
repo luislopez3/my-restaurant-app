@@ -1,18 +1,20 @@
+import "./Location.css";
 import React from "react";
 
 export default function Location() {
   return (
-    <div>
+    <div className="location-contact-page">
       <h2>Capital City Cafe</h2>
-      <p>We are located at:</p>
-      <p>1000 Main Street Santa Fe, New Mexico 87501</p>
-      <p>Our telephone no. is: (505) 555-1234</p>
-      <p>Please see the below map to our direct location.</p>
+      <h3>We are located at: 1000 Main Street Santa Fe, New Mexico 87501</h3>
+      <h4>Our telephone no. is: (505) 555-1234</h4>
+      <h4>
+        Please see the below map to our direct location on the historic Santa Fe
+        Plaza.
+      </h4>
       <iframe
+        className="iframe"
         title="Restaurant Location"
         src="https://www.google.com/maps/d/u/0/embed?mid=1hekv3Z5-39aOryt3VheD1yjVtBbMm--y"
-        width="940"
-        height="380"
       ></iframe>
     </div>
   );

@@ -1,3 +1,4 @@
+import "./MyOrder.css";
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AppContext from "./AppContext";
@@ -53,8 +54,8 @@ export default function MyOrderForm({ total_price }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">
-        Enter Your Name:
+      <div htmlFor="name">
+        Your Name:
         <input
           type="text"
           id="name"
@@ -63,9 +64,9 @@ export default function MyOrderForm({ total_price }) {
           onChange={handleNameChange}
           value={name}
         />
-      </label>
-      <label htmlFor="address">
-        Enter Your Address:
+      </div>
+      <div htmlFor="address">
+        Your Street Address:
         <input
           id="address"
           type="address"
@@ -74,9 +75,9 @@ export default function MyOrderForm({ total_price }) {
           onChange={handleAddressChange}
           value={address}
         />
-      </label>
-      <label htmlFor="email">
-        Enter Your Email:
+      </div>
+      <div htmlFor="email">
+        Your E-mail Address:
         <input
           id="email"
           type="email"
@@ -85,9 +86,9 @@ export default function MyOrderForm({ total_price }) {
           onChange={handleEmailChange}
           value={email}
         />
-      </label>
-      <label htmlFor="phone">
-        Enter Your Phone Number:
+      </div>
+      <div htmlFor="phone">
+        Your Phone No:
         <input
           id="phone"
           type="phone"
@@ -96,8 +97,12 @@ export default function MyOrderForm({ total_price }) {
           onChange={handlePhoneChange}
           value={phone_number}
         />
-      </label>
-      <button type="submit">Submit</button>
+      </div>
+      <div>
+        <button className="submit-order-button" type="submit">
+          Submit Order
+        </button>
+      </div>
     </form>
   );
 }

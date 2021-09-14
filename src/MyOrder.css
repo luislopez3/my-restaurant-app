@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.my-order-button {
+.remove-item-button {
   background-color: #56593d;
   color: #f8f0e2;
   padding: 5px;
@@ -31,9 +31,6 @@
 .confirm-order-button {
   background-color: #56593d;
   color: #f8f0e2;
-  position: fixed;
-  top: 40%;
-  right: 10%;
   width: 10rem;
   padding: 10px;
 }
@@ -43,9 +40,9 @@
   color: #56593d;
   border: 3px solid #56593d;
   position: fixed;
-  top: 10%;
-  right: 1%;
-  width: 21rem;
+  top: 13%;
+  right: 3%;
+  width: 18rem;
   line-height: 15px;
   padding: 5px;
 }
@@ -54,4 +51,67 @@
   background-color: #ffffef;
   width: 100%;
   text-align: justify;
+}
+
+.my-order-form {
+  color: #56593d;
+  text-align: left;
+  padding: 15px;
+  line-height: 25px;
+  margin: 5px;
+}
+
+.submit-order-button {
+  background-color: #56593d;
+  color: #f8f0e2;
+  font-weight: bold;
+  width: 10rem;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* -------  Media Query ------- */
+
+@media all and (max-width: 768px) {
+  .my-order-row {
+    width: 30%;
+    line-height: 5px;
+    margin: 0px;
+  }
+
+  .my-order-column {
+    font-size: 14px;
+  }
+
+  .my-order-quantity {
+    width: 2rem;
+    text-align: left;
+  }
+
+  .confirm-order-button {
+    width: 5rem;
+    padding: 3px;
+  }
+
+  .bag-total-row {
+    font-size: 9px;
+    position: fixed;
+    top: 3%;
+    right: 2%;
+    width: 9rem;
+    line-height: 5px;
+    padding: 5px;
+  }
+
+  .my-order-form {
+    padding: 5px;
+    line-height: 18px;
+    margin: 2px;
+  }
+
+  .submit-order-button {
+    width: 5rem;
+    padding: 5px;
+    margin-top: 10px;
+  }
 }

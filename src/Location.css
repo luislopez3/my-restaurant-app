@@ -1,0 +1,40 @@
+.location-contact-page {
+  background-color: #ffffef !important;
+  color: #56593d;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 2px;
+}
+
+.iframe {
+  position: absolute;
+  top: 45%;
+  left: 3%;
+  bottom: 10%;
+  right: 10%;
+  width: 90%;
+  height: 50%;
+}
+
+/* -------  Media Query ------- */
+
+@media all and (max-width: 768px) {
+  .location-contact-page {
+    font-size: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+  }
+
+  .iframe {
+    background-color: #ffffef;
+    position: relative;
+    top: 65%;
+    left: 1%;
+    bottom: 1%;
+    right: 5%;
+    width: 95%;
+    height: 50%;
+  }
+}
